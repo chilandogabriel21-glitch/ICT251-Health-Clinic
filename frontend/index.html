@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Health Clinic Management</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1>Health Clinic Management</h1>
+      <p>Clinic Information and Records System</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+      <h2>Clinic Directory</h2>
+      <p>
+        Manage clinic details, doctors,
+        specializations and contact information.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 id="formTitle">Register New Clinic</h2>
+
+      <form id="clinicForm">
+
+        <input type="hidden" id="clinicId">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="clinicName">Clinic Name</label>
+            <input type="text" id="clinicName"
+                   required maxlength="150">
+          </div>
+
+          <div class="form-group">
+            <label for="doctorName">Doctor Name</label>
+            <input type="text" id="doctorName"
+                   required maxlength="150">
+          </div>
+
+          <div class="form-group">
+            <label for="specialization">
+              Specialization
+            </label>
+            <input type="text" id="specialization"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="openingHours">
+              Opening Hours
+            </label>
+            <input type="text" id="openingHours"
+                   placeholder="08:00 - 17:00"
+                   required>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary"
+                  id="saveBtn">
+            Save Clinic
+          </button>
+
+          <button type="button" class="btn secondary"
+                  id="cancelBtn">
+            Cancel
+          </button>
+        </div>
+
+      </form>
+
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="card">
+
+      <div class="table-heading">
+        <div>
+          <h2>Registered Clinics</h2>
+          <p id="clinicCount">Loading clinics...</p>
+        </div>
+
+        <input type="search" id="searchInput"
+               placeholder="Search clinics...">
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Clinic</th>
+              <th>Doctor</th>
+              <th>Specialization</th>
+              <th>Location</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Hours</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="clinicTable">
+          </tbody>
+
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      ICT 251 Activity 4 |
+      Health Clinic Information System
+    </p>
+  </footer>
+
+</body>
+</html>
